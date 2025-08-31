@@ -1,6 +1,7 @@
 var eyes;            // Kills which spawn a special zealot (special zealots don't count for kills.)
 var fails;           // Kills without eyes
-var run;             // How many kills have been calculated
+var runs;            // How many kills have been calculated
+var kill;            // Total kills to do 
 
 var spawnRate;       // Chance for special zealots to spawn
 
@@ -48,10 +49,46 @@ if (zealuck > 0) { // Zealuck tier
 var cache = denominator;            // Keep original value of denominator to reset it.
 var spawnRate = (1 / denominator);  // Calculate Spawnrate
 
-function convert(n) {
+function convert(n) { // Convert number to string in dict recalculated
     return recalculated[short[n]];
 };
 
-function reset() {
+function reset() { // Reset denominator to original value
     denominator = cache;
 };
+
+function check(n) { // Check if recalc should happen
+    if (runs >= denominator * e && convert(n) == false) {
+        return true;
+    };
+};
+
+function recalc(d, n) { // Recalculate spawn rate after special zealot spawns
+    reset();
+    denominator /= d;
+    spawnRate = (1 / denominator);
+    recalculated[short[n]] = true;
+};
+
+function didExceed() { // Check if the runs exceeded the denominator and recalculate denominator
+    if (check(1)) { // Check if we already recalculated
+        recalc(2, 1); // Recalculate spawn rate
+    } else if (check(2)) {
+        recalc(3, 2);
+    } else if (check(3)) {
+        recalc(4, 3);
+    };
+};
+
+for (let x = 0; x < kill; x++) {
+    runs++;
+    if (Math.random() < spawnRate) { // Special zealot spawned
+        eyes++;
+        console.log(runs + ": Eye spawned! Total eyes: " + eyes);
+    } else { // Normal kill
+        fails++;
+        didExceed();
+    };
+};
+
+console.log("Total kills: " + runs + ", Total eyes: " + eyes + ", Total fails: " + fails);
