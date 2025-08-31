@@ -1,0 +1,62 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+h6 { /* This is used as a spacer in pages */
+    color: lightskyblue;
+    background-color: lightskyblue;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    align-items: center;
+}
+
+img {
+    align-items: center;
+}
+
+form {
+    align-items: center;
+}
+
+input {
+    align-items: center;
+}
+
+.container {
+  height: 50px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
