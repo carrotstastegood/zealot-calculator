@@ -1,8 +1,9 @@
+
 var eyes;            // Kills which spawn a special zealot (special zealots don't count for kills.)
-var fails;           // Kills without eyes
-var runs;            // How many kills have been calculated
 var kill;            // Total kills to do 
 
+var fails;           // Kills without eyes
+var runs;            // How many kills have been calculated
 var spawnRate;       // Chance for special zealots to spawn
 
 let recalculated = { // Check how many times the spawn rate was reset
