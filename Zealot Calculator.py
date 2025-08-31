@@ -131,7 +131,7 @@ def reset(): # Reset rate for calculations
     baseRate = originalRate
 
 def damnImRunningOutOfNames(e, i): # I dont want to see long if
-    if attempts >= baseRate * e and recalculated[short[i]] == False:
+    if attempts >= baseRate * e and not recalculated[short[i]]:
         return True
 
 def check(n): # Shorten argument lines in exceedBase()
