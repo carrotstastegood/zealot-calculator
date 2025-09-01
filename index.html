@@ -11,18 +11,18 @@
     <h1>Zealot spawnrate calculator.</h1>
 
     <p>Fill every field, or it will not work.</p>
-    <form action="calculator.js"> <!-- Ask user for information -->
+    <form action="calculator.js" method="get"> <!-- Ask user for information -->
         
         <p>How many Zealots will be killed?</p>
         <!-- To kill -->
-        <label for="kill">Number of Zealots</label>
+        <label for="kill">Number of Zealots: </label>
         <input type="number" id="kill" name="kill" required> <!-- How many times should the script calculate -->
         
         <p>How many hits to kill?</p>
         <!-- Hits to kill -->
-        <label for="one">One hit</label>
+        <label for="one">1 hit</label>
         <input type="radio" id="one" name="hits" value="1" required> <!-- One -->
-        <label for="two">Two+ hits</label>
+        <label for="two">2+ hits</label>
         <input type="radio" id="two" name="hits" value="2" required> <!-- Two -->
         
         <p>Do you have a mythic / legendary eman pet?</p>
@@ -34,7 +34,7 @@
 
         <p>If so, what level? (Give zero if you have none.)</p>
         <!-- Lvl -->
-        <label for="lvl">
+        <label for="lvl">Pet level: </label>
         <input type="number" id="lvl" name="level" required> <!-- Level of eman pet -->
 
         <p>Are you slayer level 9?</p>
@@ -45,12 +45,20 @@
         <input type="radio" id="notslayer" name="slayer" value="false" required> <!-- No -->
 
         <p>What is your tier of Zealuck? (1-5)</p>
-        <label for="zealuck">Tier</label>
-        <input type="number" id="zealuck" name="zealuck" required> <!-- Tier of Zealuck -->
+        <label for="zealuck">Zealuck tier: </label>
+        <select id="zealuck" name="zealuck"> <!-- Tier of Zealuck -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select> 
 
         <br><br>
 
-        <button type="submit">Calculate</button>
+        <label>SUBMITTT</label>
+        <input type="submit">
+
 
     </form>
 
