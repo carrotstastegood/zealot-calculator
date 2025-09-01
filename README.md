@@ -1,5 +1,5 @@
 # zealot-calculator
 
-### Being re-writen for website format
+### ((Incomplete))
 
 Calculate Zealot spawn rate from variables.
