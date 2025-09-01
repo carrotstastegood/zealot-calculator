@@ -47,6 +47,8 @@ if (zealuck > 0) { // Zealuck tier
     };
 };
 
+console.log("Spawnrate congigured!")
+
 var cache = denominator;            // Keep original value of denominator to reset it.
 var spawnRate = (1 / denominator);  // Calculate Spawnrate
 
@@ -81,6 +83,9 @@ function didExceed() { // Check if the runs exceeded the denominator and recalcu
     };
 };
 
+console.log("Defined functions!");
+alert("Running with stats: \nRuns:" + kill + "\nSpawnrate: " + spawnRate);
+
 for (let x = 0; x < kill; x++) {
     runs++;
     if (Math.random() < spawnRate) { // Special zealot spawned
@@ -93,3 +98,4 @@ for (let x = 0; x < kill; x++) {
 };
 
 console.log("Total kills: " + runs + ", Total eyes: " + eyes + ", Total fails: " + fails);
+alert("Total kills: " + runs + "\nTotal eyes: " + eyes + "\nTotal fails:" + fails);
