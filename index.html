@@ -11,13 +11,21 @@
     <h1>Zealot spawnrate calculator.</h1>
 
     <p>Fill every field, or it will not work.</p>
-    <form action="calculator.js" method="get"> <!-- Ask user for information -->
+    <form> <!-- Ask user for information -->
         
         <p>How many Zealots will be killed?</p>
         <!-- To kill -->
         <label for="kill">Number of Zealots: </label>
         <input type="number" id="kill" name="kill" required> <!-- How many times should the script calculate -->
         
+        <p>Type of Zealot</p>
+        <!-- Type of zealots -->
+        <label for="type">Zealot type:</label>
+        <select id="type" name="type">
+            <option value="1">Zealot</option> <!-- Regular -->
+            <option value="2">Bruiser</option> <!-- Bruiser -->
+        </select>
+
         <p>How many hits to kill?</p>
         <!-- Hits to kill -->
         <label for="one">1 hit</label>
@@ -56,9 +64,13 @@
 
         <br><br>
 
-        <label>SUBMITTT</label>
-        <input type="submit">
+        <div class="container">
+            <div class="center">
+                <button id="submit">Calculate</button>
+            </div>
+        </div>
 
+        <script src="calculator.js"></script>
 
     </form>
 
